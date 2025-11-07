@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Django
+*.log
+db.sqlite3
+media/
+staticfiles/
+
+# VSCode
+.vscode/
+
+# macOS
+.DS_Store
+
+# Env
+.env
+venv/
+ENV/
+
+# Migrations
+*/migrations/__pycache__/
+*.sqlite3
+
+# Docker
+*.pid
+
+# Test
+.coverage
+htmlcov/
+
+# Others
+*.swp
+*.swo
+.idea/
+*.bak
+*.tmp
+
+# Postman
+*.postman_collection.json
