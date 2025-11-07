@@ -5,7 +5,6 @@ Este proyecto es una API basada en Django para la gestión de inventario de una 
 
 ## Requisitos previos
 
-- Python 3.x
 - Docker
 - Docker Compose
 
