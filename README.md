@@ -38,7 +38,10 @@ Este proyecto es una API basada en Django para la gestión de inventario de una 
 
 ## Uso
 
+
 Una vez que la aplicación está corriendo, puedes acceder a la API en `http://localhost:8000/api/`.
+
+> **Nota:** Este repositorio incluye el archivo `Bookstore-Inventory-API.postman_collection.json` para importar en Postman y facilitar las pruebas de los endpoints si lo deseas.
 
 ### Endpoints principales
 
