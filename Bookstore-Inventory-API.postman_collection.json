@@ -1,0 +1,133 @@
+{
+  "info": {
+    "name": "Bookstore Inventory API",
+    "description": "Colección de pruebas para la API de inventario de librerías.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Crear libro",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"El Quijote\",\n  \"author\": \"Miguel de Cervantes\",\n  \"isbn\": \"9788437604947\",\n  \"cost_usd\": 15.99,\n  \"stock_quantity\": 25,\n  \"category\": \"Literatura Clásica\",\n  \"supplier_country\": \"ES\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/books/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "books", ""]
+        }
+      }
+    },
+    {
+      "name": "Listar libros",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8000/api/books/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "books", ""]
+        }
+      }
+    },
+    {
+      "name": "Obtener libro por ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8000/api/books/1/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "books", "1", ""]
+        }
+      }
+    },
+    {
+      "name": "Actualizar libro",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"El Quijote (Edición Revisada)\",\n  \"author\": \"Miguel de Cervantes\",\n  \"isbn\": \"9788437604947\",\n  \"cost_usd\": 16.99,\n  \"stock_quantity\": 20,\n  \"category\": \"Literatura Clásica\",\n  \"supplier_country\": \"ES\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/books/1/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "books", "1", ""]
+        }
+      }
+    },
+    {
+      "name": "Eliminar libro",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8000/api/books/1/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "books", "1", ""]
+        }
+      }
+    },
+    {
+      "name": "Buscar por categoría",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8000/api/books/search?category=Clásica",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "books", "search"],
+          "query": [
+            { "key": "category", "value": "Clásica" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Libros con stock bajo",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8000/api/books/low-stock?threshold=10",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "books", "low-stock"],
+          "query": [
+            { "key": "threshold", "value": "10" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Calcular precio de venta sugerido",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:8000/api/books/1/calculate-price/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "books", "1", "calculate-price", ""]
+        }
+      }
+    }
+  ]
+}
