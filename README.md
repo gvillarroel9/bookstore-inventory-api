@@ -14,7 +14,7 @@ Este proyecto es una API basada en Django para la gestión de inventario de una 
 1. Clona el repositorio:
 
    ```
-   git clone <url-del-repositorio>
+   git clone https://github.com/gvillarroel9/bookstore-inventory-api
    cd bookstore-inventory-api
    ```
 
@@ -54,11 +54,3 @@ Una vez que la aplicación está corriendo, puedes acceder a la API en `http://l
 - **GET /api/books/search?category={categoria}**: Buscar libros por categoría (búsqueda flexible).
 - **GET /api/books/low-stock?threshold={n}**: Listar libros con stock menor al umbral indicado (por defecto 10).
 - **POST /api/books/{id}/calculate-price/**: Calcular el precio de venta sugerido usando tasa de cambio actual y margen de ganancia.
-
-## Pruebas
-
-Para ejecutar los tests de la app de inventario:
-
-```
-docker-compose run web python manage.py test
-```
