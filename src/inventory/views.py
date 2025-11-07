@@ -35,11 +35,7 @@ class BookViewSet(viewsets.ModelViewSet):
     def calculate_price(self, request, pk=None):
         
         book = self.get_object()
-        country_currency_map = {
-            'ES': 'EUR', 'US': 'USD', 'GB': 'GBP', 'MX': 'MXN', 'AR': 'ARS', 'BR': 'BRL', 'CL': 'CLP', 'CO': 'COP', 'PE': 'PEN', 'UY': 'UYU', 'PY': 'PYG', 'EC': 'USD', 'FR': 'EUR', 'DE': 'EUR', 'IT': 'EUR', 'PT': 'EUR', 'JP': 'JPY', 'CN': 'CNY', 'IN': 'INR', 'CA': 'CAD', 'AU': 'AUD', 'CH': 'CHF', 'RU': 'RUB', 'KR': 'KRW', 'ZA': 'ZAR', 'VE': 'VES', 'CR': 'CRC', 'DO': 'DOP', 'GT': 'GTQ', 'HN': 'HNL', 'NI': 'NIO', 'SV': 'USD', 'PA': 'USD', 'PR': 'USD', 'CU': 'CUP', 'BO': 'BOB', 'BR': 'BRL', 'EC': 'USD', 'PY': 'PYG', 'PE': 'PEN', 'UY': 'UYU', 'CL': 'CLP', 'CO': 'COP', 'AR': 'ARS', 'MX': 'MXN', 'ES': 'EUR', 'PT': 'EUR', 'FR': 'EUR', 'IT': 'EUR', 'DE': 'EUR', 'GB': 'GBP', 'JP': 'JPY', 'CN': 'CNY', 'IN': 'INR', 'KR': 'KRW', 'RU': 'RUB', 'CA': 'CAD', 'AU': 'AUD', 'CH': 'CHF', 'ZA': 'ZAR', 'VE': 'VES', 'CR': 'CRC', 'DO': 'DOP', 'GT': 'GTQ', 'HN': 'HNL', 'NI': 'NIO', 'SV': 'USD', 'PA': 'USD', 'PR': 'USD', 'CU': 'CUP', 'BO': 'BOB'
-        }
-        currency = country_currency_map.get(book.supplier_country.upper(), 'USD')
-
+        currency = 'VES'
         try:
             response = requests.get('https://api.exchangerate-api.com/v4/latest/USD', timeout=5)
             data = response.json()
